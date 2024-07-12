@@ -1,0 +1,40 @@
+<!-- JavaScript: Collect the value of href, hreflang, rel, target, and type attributes of a link -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+</head>
+
+<body>
+    <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+            href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get attributes value</button>
+    <script>
+        function getAttributes() {
+            // Getting the href attribute value of the link
+            var u = document.getElementById("w3r").href;
+            // Alerting the value of the href attribute
+            alert('The value of the href attribute of the link is : ' + u);
+            // Getting the hreflang attribute value of the link
+            var v = document.getElementById("w3r").hreflang;
+            // Alerting the value of the hreflang attribute
+            alert('The value of the hreflang attribute of the link is : ' + v);
+            // Getting the rel attribute value of the link
+            var w = document.getElementById("w3r").rel;
+            // Alerting the value of the rel attribute
+            alert('The value of the rel attribute of the link is : ' + w);
+            // Getting the target attribute value of the link
+            var x = document.getElementById("w3r").target;
+            // Alerting the value of the target attribute
+            alert('The value of the target attribute of the link is : ' + x);
+            // Getting the type attribute value of the link
+            var y = document.getElementById("w3r").type;
+            // Alerting the value of the type attribute
+            alert('The value of the type attribute of the link is : ' + y);
+        }
+
+    </script>
+</body>
+
+</html>
