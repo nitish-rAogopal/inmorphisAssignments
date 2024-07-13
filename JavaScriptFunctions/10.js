@@ -16,7 +16,7 @@ function identityMatrix(n) {
         }
         console.log(text);
         text = "";
-       
+
     }
 }
 identityMatrix(5);

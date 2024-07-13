@@ -6,7 +6,7 @@ function checkPrime(num) {
     for (let i = 2; i < num / 2; i++) {
         if (num % i == 0)
             fact++;
-        if(fact>0)
+        if (fact > 0)
             return false;
     }
     return true;

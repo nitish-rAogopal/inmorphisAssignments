@@ -1,0 +1,30 @@
+<!-- Write a JavaScript function to compute the value of bn where n is the
+exponent and b is the bases. Accept b and n from the user and display the
+result. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Number : <input type="number" id="num">
+        Power : <input type="number" id="pow">
+        <button onclick="power()">Calculate</button>
+    </p>
+    <hr>
+    <p id="res"></p>
+    <script>
+        function power() {
+            var num = document.getElementById('num').value;
+            var pow = document.getElementById('pow').value;
+            var res = num ** pow;
+            document.getElementById('res').innerHTML = 'Result : ' + res;
+        }
+    </script>
+</body>
+
+</html>
