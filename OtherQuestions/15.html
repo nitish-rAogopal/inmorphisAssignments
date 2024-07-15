@@ -1,0 +1,48 @@
+<!-- Create a "Mad-libs" game using JavaScript.
+Create a blank page.
+Using a prompt box, prompt the user to supply his or her name.
+Then, using 5 additional prompt boxes, prompt the user to supply 5 words.
+Save each word in a separate variable.
+Then, using document.write() statements, use the information stored in
+variables to display a "Mad-libs" type of story, i.e. create a few paragraphs of
+information in story format.
+Also, prompt the user for a color (i.e. one of the 16 named colors or a hex
+value).
+Store this color in a variable.
+In the "mad libs" story, highlight, using the color supplied by the user, each
+of the words that you previously collected. Do this by surrounding the words
+with <div> tags and using an inline style. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mad-libs Game</title>
+</head>
+
+<body>
+    <script>
+        // Prompt user for name
+        const name = prompt("Enter your name:");
+        // Prompt user for 5 words
+        const word1 = prompt("Enter a noun:");
+        const word2 = prompt("Enter a verb:");
+        const word3 = prompt("Enter an adjective:");
+        const word4 = prompt("Enter a plural noun:");
+        const word5 = prompt("Enter a place:");
+        // Prompt user for color
+        const color = prompt("Enter a color (named or hex):");
+        // Create the Mad-libs story
+        document.write(`Hello, my name is ${name}.`);
+        document.write(`I like to ${word2} in the ${word3} sun.`);
+        document.write(`I have a lot of ${word4} friends.`);
+        document.write(`We like to play in the ${word5}.`);
+        // Highlight the words with the user-supplied color
+        document.write(`<div style="color: ${color}">${word1}</div>`);
+        document.write(`<div style="color: ${color}">${word2}</div>`);
+        document.write(`<div style="color: ${color}">${word3}</div>`);
+        document.write(`<div style="color: ${color}">${word4}</div>`);
+        document.write(`<div style="color: ${color}">${word5}</div>`);
+    </script>
+</body>
+
+</html>

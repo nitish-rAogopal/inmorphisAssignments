@@ -1,0 +1,49 @@
+<!-- Create an HTML page that includes 2 paragraphs of text. Add JavaScript to
+insert a new paragraph in between the other 2. Add JavaScript to use an event
+to change the style of the new paragraph using either the style property or the
+className property. Add JavaScript to use an event to change the style of the
+new paragraph back to the original. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Paragraph</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="para1">This is the first paragraph.</p>
+    <p id="para2">This is the second paragraph.</p>
+    <button onclick="addParagraph()">Add Paragraph</button>
+    <button onclick="highlightParagraph()">Highlight</button>
+    <button onclick="resetParagraph()">Reset</button>
+    <script>
+        function addParagraph() {
+            const newPara = document.createElement("p");
+            newPara.id = "newPara";
+            newPara.innerHTML = "This is the new paragraph.";
+            document.body.insertBefore(newPara, document.getElementById("para2"));
+        }
+
+        function highlightParagraph() {
+            const newPara = document.getElementById("newPara");
+            if (newPara) {
+                newPara.className = "highlight";
+            }
+        }
+
+        function resetParagraph() {
+            const newPara = document.getElementById("newPara");
+            if (newPara) {
+                newPara.className = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

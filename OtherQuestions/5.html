@@ -1,0 +1,27 @@
+<!-- Create a basic page in html that consists of one image. Using the onClick
+event handler, when the user clicks on the image, change it to a unique image -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Changer</title>
+    <script src="6.js"></script>
+</head>
+
+<body>
+    <button onclick="changeBackgroundColor()">change background</button>
+    <img src="image1.webp" id="myImage" width="300px" onclick="changeImage()">
+    <script>
+        function changeImage() {
+            const image = document.getElementById("myImage");
+            if (image.src === "image1.webp") {
+                image.src = "image2.jpg";
+            } else {
+                image.src = "image1.webp";
+            }
+        }
+    </script>
+</body>
+
+</html>
