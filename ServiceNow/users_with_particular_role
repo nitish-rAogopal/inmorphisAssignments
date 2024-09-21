@@ -1,0 +1,26 @@
+// Write your scripts here to run (JavaScript executed on server)
+// Define the role name you want to search for
+var roleName = 'admin'; // Change 'admin' to the desired role name
+
+// Query the sys_user_role table to get the sys_id of the role
+var roleGR = new GlideRecord('sys_user_role');
+roleGR.addQuery('name', roleName);
+roleGR.query();
+
+if (roleGR.next()) {
+    var roleId = roleGR.getValue('sys_id'); // Get the sys_id of the role
+
+    // Query the sys_user_has_role table to get users with the specified role
+    var userRoleGR = new GlideRecord('sys_user_has_role');
+    userRoleGR.addQuery('role', roleId);
+    userRoleGR.query();
+
+    // Loop through the results and print user information
+    gs.print('Users with the "' + roleName + '" role:');
+    while (userRoleGR.next()) {
+        var userGR = userRoleGR.user.getRefRecord(); // Get the user record
+        gs.print('User: ' + userGR.name + ' (sys_id: ' + userGR.sys_id + ')');
+    }
+} else {
+    gs.print('Role "' + roleName + '" not found.');
+}
