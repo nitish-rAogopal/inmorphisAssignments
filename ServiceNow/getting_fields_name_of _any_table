@@ -1,0 +1,9 @@
+// Create a GlideRecord for the sys_dictionary table, filtering on sc_req_item table
+var dictionaryGR = new GlideRecord('sys_dictionary');
+dictionaryGR.addQuery('name', 'sc_req_item'); // Table name
+dictionaryGR.query();
+
+while (dictionaryGR.next()) {
+    // Print the backend name (element) of each field
+    gs.print('Field Label: ' + dictionaryGR.getValue('column_label') + ', Backend Name: ' + dictionaryGR.getValue('element'));
+}
